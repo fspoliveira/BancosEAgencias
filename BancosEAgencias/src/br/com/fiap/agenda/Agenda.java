@@ -1,4 +1,4 @@
-package br.com.fiap;
+package br.com.fiap.agenda;
 
 import java.io.BufferedReader;
 import java.io.IOException;
