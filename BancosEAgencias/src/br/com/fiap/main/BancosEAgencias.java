@@ -11,7 +11,7 @@ class BancosEAgencias {
 	static TreeMap<Banco, TreeSet> tMap = new TreeMap<Banco, TreeSet>();
 	
 	public static void main(String args[]) {
-
+		 
 		/*Banco do Brasil com duas Agencias */
 		Banco b1 = new Banco(1, "Branco do Brasil");	
 
@@ -31,14 +31,28 @@ class BancosEAgencias {
 		BancosEAgencias.setAgencia(b2, a4);	
 		
 		Agencia a5 = new Agencia(003, "Osasco");
-		BancosEAgencias.setAgencia(b2, a5);	
-
+		BancosEAgencias.setAgencia(b2, a5);		
+		
+		
+		 for (Banco treeKey : tMap.keySet()){
+			 System.out.println(treeKey.getNomeBanco() + "\n");				  
+			
+			  Iterator iterator = tMap.get(treeKey).iterator();
+			  
+			  while (iterator.hasNext()) {
+		            System.out.print(iterator.next() + " ");
+		            
+		        }
+			 
+		 } 
 	}
 
+	@SuppressWarnings("unchecked")
 	public static void setAgencia(Banco b, Agencia a) {
-
+		
 		TreeSet<Agencia> treeSet = null;
-
+		
+		treeSet = null;
 		if (!tMap.containsKey(b)) {
 			treeSet = new TreeSet<Agencia>();
 		} else {
@@ -47,12 +61,9 @@ class BancosEAgencias {
 
 		treeSet.add(a);
 
-		tMap.put(b, treeSet);
-
-		System.out.println("Keys of tree map: " + tMap.keySet());
-		// Rerieving all values
-		System.out.println("Values of tree map: " + tMap.values());
-
+		tMap.put(b, treeSet);	
+		
+		
 	}
 
 }
